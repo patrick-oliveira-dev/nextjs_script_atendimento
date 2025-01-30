@@ -7,8 +7,6 @@ export default function Script() {
     const router = useRouter();
     const { nomeTitular, nomeAgr, tipoCertificado, telefone, email } = router.query;
     const [step, setStep] = useState(1);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [modalContent, setModalContent] = useState('');
 
     const handleNext = () => {
         setStep((prevStep) => {
@@ -19,10 +17,6 @@ export default function Script() {
     };
     
     const handlePrevious = () => setStep(step - 1);
-    const openModal = (content: string) => {
-        setModalContent(content);
-        setIsModalOpen(true);
-    };
 
     // Função para obter a saudação dinâmica
     const getSaudacao = () => {
